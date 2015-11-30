@@ -7,10 +7,12 @@ public class IsUnique {
   }
   public boolean getString(){
     HashSet<Character> unique = new HashSet<Character>();
-    for (int i = 0; i < test.length() ;i++ ) {
-      unique.add(test.charAt(i));
+    String[] arrTest = test.split(" ");
+    String strTest = String.join("", arrTest);
+    for (int i = 0; i < strTest.length() ;i++ ) {
+      unique.add(strTest.charAt(i));
     }
-    if(unique.size()!= test.length()){
+    if(unique.size()!= strTest.length()){
       return false;
     }
     return true;
