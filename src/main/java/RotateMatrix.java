@@ -11,12 +11,15 @@ public class RotateMatrix {
     }
     return n;
   }
-  public int[][] rotate(int[][] m){
-    for (int  j = 0; j < m[0].length/2; j++) {
-      for (int i = 0; i < m.length; i++) {
+  public int[][] rotateRight(int[][] m){
+    int n = m.length;
+    for (int i = 0; i < n / 2; i++) {
+      for (int j = i; j < n - i - 1; j++) {
           int x = m[i][j];
-          m[i][j] = m[i][m[0].length -1 -j];
-          m[i][m[0].length -1 -j] = x;
+          m[i][j] = m[n - j - 1][i];
+          m[n - j - 1][i] = m[n - 1 - i][n - 1 - j];
+          m[n - 1 - i][n - 1 - j] = m[j][n - 1 - i];
+          m[j][n - 1 - i] = x;
       }
     }
     return m;

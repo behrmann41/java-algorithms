@@ -17,6 +17,6 @@ public class RotateMatrixTest {
       {2,2,2},
       {3,3,3}
     };
-    assertArrayEquals(rotated, matrix.rotate(original));
+    assertArrayEquals(rotated, matrix.rotateRight(original));
   }
 }
